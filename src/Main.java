@@ -60,15 +60,8 @@ public class Main {
         Thread t1 = new Thread(generator);
         Thread t2 = new Thread(integrator);
 
+        // Запускаем потоки ОДНОВРЕМЕННО, без задержек
         t1.start();
-        
-        // --- ИСПРАВЛЕНИЕ: Задержка для старта генератора ---
-        try {
-            Thread.sleep(100);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        
         t2.start();
 
         try {
