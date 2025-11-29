@@ -61,6 +61,14 @@ public class Main {
         Thread t2 = new Thread(integrator);
 
         t1.start();
+        
+        // --- ИСПРАВЛЕНИЕ: Задержка для старта генератора ---
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        
         t2.start();
 
         try {
